@@ -271,6 +271,9 @@
   .bm-box { border: 1px solid var(--gold); margin: 14px 8px 0; padding: 5px 2px; font-family: 'Cinzel', serif; color: var(--gold); font-size: 6px; letter-spacing: 0.12em; }
   .bm-box b { display: block; font-size: 9px; font-weight: 500; letter-spacing: 0.14em; }
   .bm-wt { position: absolute; bottom: 8px; left: 0; right: 0; font-size: 6px; color: var(--gold); }
+  .sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+  .sub-grid .product { padding: 2.5rem 1.5rem 2rem; }
+  .sub-grid .tier-name { margin-top: 0; }
   .journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 4rem auto 0; max-width: 1000px; }
   .journey-step { text-align: center; padding: 0 0.5rem; }
   .journey-step span { font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--gold); }
@@ -349,7 +352,7 @@
     .story-grid, .farm-grid, .location-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .intro-band { grid-template-columns: 1fr; }
     .stat-block { border-right: none; border-bottom: 1px solid rgba(212,168,67,0.15); }
-    .shop-grid { grid-template-columns: 1fr; }
+    .shop-grid, .sub-grid { grid-template-columns: 1fr; }
     .journey { grid-template-columns: 1fr 1fr; }
     .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
     .gallery-cell.tall { grid-row: span 1; }
@@ -548,6 +551,39 @@
         <a href="#contact" class="shop-btn" data-coffee="Estate">Reserve Estate</a>
       </div>
     </div>
+    <div class="subs">
+      <div class="shop-header" style="margin:4rem 0 2rem;">
+        <span class="section-tag" style="display:block; text-align:center;">Subscriptions</span>
+        <h2 class="section-title" style="text-align:center; font-size:clamp(1.8rem,3vw,2.6rem);">One Bag a <em>Month</em></h2>
+        <p class="section-body" style="text-align:center; margin: 0 auto; max-width:620px;">
+          Prepay for a season of Oro de Diamante and a fresh-roasted bag arrives every month. Subscriptions begin with the first harvest in September 2027.
+        </p>
+      </div>
+      <div class="sub-grid">
+        <div class="product">
+          <div class="tier-name">3 Months</div>
+          <div class="tier-volume">3 bags · One a month</div>
+          <p class="product-desc">A first taste of the estate across a season.</p>
+          <p class="product-meta">Pricing announced at launch</p>
+          <a href="#contact" class="shop-btn" data-coffee="3-month subscription">Reserve 3 Months</a>
+        </div>
+        <div class="product featured">
+          <div class="tier-badge">Most Popular</div>
+          <div class="tier-name">6 Months</div>
+          <div class="tier-volume">6 bags · One a month</div>
+          <p class="product-desc">Half a year of single-source coffee, roasted fresh and delivered monthly.</p>
+          <p class="product-meta">Pricing announced at launch</p>
+          <a href="#contact" class="shop-btn" data-coffee="6-month subscription">Reserve 6 Months</a>
+        </div>
+        <div class="product">
+          <div class="tier-name">12 Months</div>
+          <div class="tier-volume">12 bags · One a month</div>
+          <p class="product-desc">A full year from one farm. Best value, and a gift worth giving.</p>
+          <p class="product-meta">Pricing announced at launch</p>
+          <a href="#contact" class="shop-btn" data-coffee="12-month subscription">Reserve 12 Months</a>
+        </div>
+      </div>
+    </div>
     <div class="journey">
       <div class="journey-step"><span>1</span><h4>Grown</h4><p>On our single-source farm in San Salvador de Baru, Costa Rica.</p></div>
       <div class="journey-step"><span>2</span><h4>Shipped Green</h4><p>Unroasted beans travel to the United States.</p></div>
@@ -644,7 +680,7 @@
     <h2 class="section-title" style="text-align:center;">Reserve Your <em>Bags</em></h2>
     <div class="gold-divider" style="margin: 1.5rem auto;"></div>
     <p class="section-body" style="text-align:center; margin: 0 auto;">
-      Tell us which coffee you want and we will email you the moment the first harvest is ready to ship. No payment is taken today.
+      Tell us which coffee or subscription you want and we will email you the moment the first harvest is ready to ship. No payment is taken today.
     </p>
     <form class="contact-form" name="reserve" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="reserve">
@@ -654,10 +690,13 @@
         <input type="email" name="email" placeholder="Email Address" required>
       </div>
       <select name="coffee" id="coffee-select" required>
-        <option value="" disabled selected>Which coffee?</option>
+        <option value="" disabled selected>Which coffee or subscription?</option>
         <option>Grand Reserva</option>
         <option>Estate</option>
         <option>Both</option>
+        <option>3-month subscription</option>
+        <option>6-month subscription</option>
+        <option>12-month subscription</option>
         <option>Just keep me posted</option>
       </select>
       <textarea name="message" placeholder="How many bags, and anything else you'd like us to know (optional)"></textarea>
