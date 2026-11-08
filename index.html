@@ -391,6 +391,25 @@
   .nav-logo { letter-spacing:0.18em; font-size:1.1rem; }
   .hero-title em, .section-title em, .footer-logo em, .nav-logo span { font-style:normal; }
   .hero-title { letter-spacing:0.04em; }
+
+  /* HERO LEGIBILITY */
+  .hero-overlay { background: linear-gradient(to bottom, rgba(13,13,13,0.6) 0%, rgba(13,13,13,0.5) 45%, rgba(13,13,13,0.78) 80%, #0d0d0d 100%); }
+  .hero-eyebrow { color: #f0d58a; font-weight: 600; font-size: 0.8rem; text-shadow: 0 2px 10px rgba(0,0,0,0.9); }
+  .hero-title { text-shadow: 0 4px 24px rgba(0,0,0,0.7); }
+  .hero-title em { color: #e0b858; }
+  .hero-sub { opacity: 1; color: #fff8e6; font-weight: 500; font-size: clamp(1.3rem, 2.2vw, 1.7rem); max-width: 640px; text-shadow: 0 2px 12px rgba(0,0,0,0.9); }
+  .hero-sub span { opacity: 1 !important; font-size: 0.85em !important; font-weight: 500; }
+  .hero-cta { background: rgba(13,13,13,0.7); border-width: 2px; color: #f0d58a; font-size: 0.8rem; text-shadow: none; }
+  .hero-cta:hover { background: var(--gold); color: var(--espresso); }
+  @media (max-width: 600px) {
+    nav { flex-wrap: wrap; justify-content: center; gap: 0.5rem; padding: 0.8rem 1rem; background: rgba(13,13,13,0.94); }
+    .nav-logo { font-size: 1.15rem; }
+    .nav-links { gap: 0.9rem; flex-wrap: wrap; justify-content: center; }
+    .nav-links a { font-size: 0.64rem; letter-spacing: 0.1em; opacity: 1; }
+    .hero { padding-top: 8rem; }
+    .hero-eyebrow { font-size: 0.74rem; letter-spacing: 0.22em; }
+    .hero-sub { font-size: 1.35rem; }
+  }
 </style>
 </head>
 <body>
