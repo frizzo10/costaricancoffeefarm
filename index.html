@@ -87,7 +87,7 @@
   }
   .hero-content {
     position: relative; z-index: 2; text-align: center;
-    padding: 0 2rem;
+    padding: 0 2rem; max-width: 46vw;
     animation: fadeup 1.4s ease both;
   }
   @keyframes fadeup {
@@ -349,6 +349,7 @@
   @media (max-width: 900px) {
     .hero { height: auto; min-height: 100vh; flex-direction: column; gap: 2.5rem; padding: 6rem 0 5rem; }
     .hero-bag { height: auto; width: min(78vw, 360px); }
+    .hero-content { max-width: none; }
     .scroll-hint { display: none; }
     .story-grid, .farm-grid, .location-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .intro-band { grid-template-columns: 1fr; }
