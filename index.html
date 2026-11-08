@@ -263,6 +263,13 @@
     letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); opacity: 0.55; margin-bottom: 1.2rem;
   }
   .product-desc { font-size: 1.05rem; font-weight: 300; color: var(--parchment); opacity: 0.85; line-height: 1.6; }
+  .price-main { font-family: 'Cinzel', serif; font-size: 2rem; color: var(--gold); margin: 1.2rem 0 0; }
+  .price-sub { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--parchment); opacity: 0.6; margin-top: 0.2rem; }
+  .price-rows { margin: 1.2rem 0 0.4rem; text-align: left; }
+  .price-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.55rem 0; border-top: 1px solid rgba(201,162,75,0.25); }
+  .price-row span { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--parchment); opacity: 0.8; }
+  .price-row b { font-family: 'Cinzel', serif; font-weight: 600; font-size: 1.35rem; color: var(--gold); }
+  .price-row small { display: block; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: none; opacity: 0.7; font-weight: 400; text-align: right; }
   .product-meta { font-size: 0.95rem; font-style: italic; color: var(--parchment); opacity: 0.55; margin: 1rem 0 1.6rem; }
   .shop-btn {
     display: inline-block; padding: 0.9rem 2rem; border: 1px solid var(--gold); color: var(--gold);
@@ -547,7 +554,8 @@
         <div class="tier-name">Grand Reserva</div>
         <div class="tier-volume">12 oz (340 g) · Whole Bean</div>
         <p class="product-desc">Our most selective offering from the estate, in the fewest bags. Single source, organically grown Catuai at 1,650 feet.</p>
-        <p class="product-meta">Price and tasting notes announced at launch</p>
+        <div class="price-main">$80</div><div class="price-sub">per 12 oz bag</div>
+        <p class="product-meta">Tasting notes announced at launch</p>
         <a href="#contact" class="shop-btn" data-coffee="Grand Reserva">Reserve Grand Reserva</a>
       </div>
       <div class="product">
@@ -555,7 +563,8 @@
         <div class="tier-name">Estate</div>
         <div class="tier-volume">12 oz (340 g) · Whole Bean</div>
         <p class="product-desc">The signature Oro de Diamante cup. Single source, organically grown Catuai from our off-the-grid estate.</p>
-        <p class="product-meta">Price and tasting notes announced at launch</p>
+        <div class="price-main">$60</div><div class="price-sub">per 12 oz bag</div>
+        <p class="product-meta">Tasting notes announced at launch</p>
         <a href="#contact" class="shop-btn" data-coffee="Estate">Reserve Estate</a>
       </div>
     </div>
@@ -566,13 +575,17 @@
         <p class="section-body" style="text-align:center; margin: 0 auto; max-width:620px;">
           Prepay for a season of Oro de Diamante and a fresh-roasted bag arrives every month. Subscriptions begin with the first harvest in September 2027.
         </p>
+        <p class="section-body" style="text-align:center; margin: 1rem auto 0; max-width:620px;">
+          You pay once for the whole subscription, up front, not month by month. We will email you two weeks before your card is charged. No payment is taken today.
+        </p>
       </div>
       <div class="sub-grid">
         <div class="product">
           <div class="tier-name">3 Months</div>
           <div class="tier-volume">3 bags · One a month</div>
           <p class="product-desc">A first taste of the estate across a season.</p>
-          <p class="product-meta">Pricing announced at launch</p>
+          <div class="price-rows"><div class="price-row"><span>Estate</span><b>$171<small>$57 a bag</small></b></div><div class="price-row"><span>Grand Reserva</span><b>$228<small>$76 a bag</small></b></div></div>
+          <p class="product-meta">Paid once, up front. Free shipping.</p>
           <a href="#contact" class="shop-btn" data-coffee="3-month subscription">Reserve 3 Months</a>
         </div>
         <div class="product featured">
@@ -580,14 +593,16 @@
           <div class="tier-name">6 Months</div>
           <div class="tier-volume">6 bags · One a month</div>
           <p class="product-desc">Half a year of single-source coffee, roasted fresh and delivered monthly.</p>
-          <p class="product-meta">Pricing announced at launch</p>
+          <div class="price-rows"><div class="price-row"><span>Estate</span><b>$324<small>$54 a bag</small></b></div><div class="price-row"><span>Grand Reserva</span><b>$432<small>$72 a bag</small></b></div></div>
+          <p class="product-meta">Paid once, up front. Free shipping.</p>
           <a href="#contact" class="shop-btn" data-coffee="6-month subscription">Reserve 6 Months</a>
         </div>
         <div class="product">
           <div class="tier-name">12 Months</div>
           <div class="tier-volume">12 bags · One a month</div>
           <p class="product-desc">A full year of coffee from one estate. Best value, and a gift worth giving.</p>
-          <p class="product-meta">Pricing announced at launch</p>
+          <div class="price-rows"><div class="price-row"><span>Estate</span><b>$612<small>$51 a bag</small></b></div><div class="price-row"><span>Grand Reserva</span><b>$816<small>$68 a bag</small></b></div></div>
+          <p class="product-meta">Paid once, up front. Free shipping.</p>
           <a href="#contact" class="shop-btn" data-coffee="12-month subscription">Reserve 12 Months</a>
         </div>
       </div>
