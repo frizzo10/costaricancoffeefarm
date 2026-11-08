@@ -439,6 +439,31 @@
 
   .gallery-cell.wide { grid-column: span 1; }
   @media (max-width: 900px) { .gallery-cell.wide { grid-column: span 2; } }
+
+  /* RESERVE POPUP */
+  button.shop-btn { background: transparent; cursor: pointer; }
+  .rm-overlay { position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.78); display: none; align-items: flex-start; justify-content: center; padding: 4vh 1rem; overflow-y: auto; }
+  .rm-overlay.open { display: flex; }
+  .rm-panel { position: relative; width: 100%; max-width: 480px; background: var(--mahogany); border: 1px solid var(--gold); padding: 2.4rem 2rem 2rem; margin: auto 0; box-shadow: 0 30px 80px rgba(0,0,0,0.7); }
+  .rm-close { position: absolute; top: 0.6rem; right: 0.9rem; background: none; border: none; color: var(--gold); font-size: 2rem; line-height: 1; cursor: pointer; }
+  .rm-tag { display: block; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+  .rm-title { text-align: center; font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--white); margin: 0.5rem 0 0.2rem; }
+  .rm-detail { text-align: center; font-size: 0.95rem; color: var(--parchment); opacity: 0.75; margin: 0; }
+  .rm-total { text-align: center; font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--gold); margin: 0.8rem 0 0.2rem; }
+  .rm-note { text-align: center; font-style: italic; font-size: 0.95rem; color: var(--parchment); opacity: 0.7; margin: 0 0 1.4rem; }
+  .rm-form { display: flex; flex-direction: column; gap: 0.9rem; }
+  .rm-form input, .rm-form textarea { background: rgba(245,238,216,0.06); border: 1px solid rgba(212,168,67,0.3); padding: 0.9rem 1rem; color: var(--cream); font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; outline: none; width: 100%; box-sizing: border-box; }
+  .rm-form input:focus, .rm-form textarea:focus { border-color: var(--gold); }
+  .rm-form textarea { height: 80px; resize: vertical; }
+  .rm-form ::placeholder { color: rgba(245,238,216,0.4); }
+  .rm-qty { display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: var(--cream); font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+  .rm-qty input { width: 90px; text-align: center; }
+  .rm-submit { background: var(--gold); color: var(--espresso); border: none; padding: 1.1rem; font-family: 'Montserrat', sans-serif; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; cursor: pointer; }
+  .rm-submit:disabled { opacity: 0.6; cursor: default; }
+  .rm-error { color: #f0a090; text-align: center; font-size: 0.95rem; margin: 0; display: none; }
+  .rm-done { display: none; text-align: center; padding: 1rem 0; }
+  .rm-done h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.6rem; margin: 0 0 0.8rem; }
+  .rm-done p { color: var(--parchment); font-size: 1.1rem; line-height: 1.6; margin: 0 0 1.4rem; }
 </style>
 </head>
 <body>
@@ -618,18 +643,18 @@
         <div class="tier-badge">Limited</div><div class="tier-name">Grand Reserva</div>
         <div class="tier-volume">12 oz (340 g) · Whole Bean · One bag a month</div>
         <p class="product-desc">Our most selective offering from the estate, in the fewest bags. Single source, organically grown Catuai at 1,650 feet.</p>
-        <div class="plan-row"><div class="plan-info"><b>3 Months</b><span>3 bags · one a month</span></div><div class="plan-price"><b>$228</b><small>$76 a bag · save $12</small></div><a href="#contact" class="shop-btn" data-coffee="Grand Reserva: 3-month subscription">Reserve</a></div>
-        <div class="plan-row"><div class="plan-info"><b>6 Months</b><em class="plan-tag">Most Popular</em><span>6 bags · one a month</span></div><div class="plan-price"><b>$432</b><small>$72 a bag · save $48</small></div><a href="#contact" class="shop-btn" data-coffee="Grand Reserva: 6-month subscription">Reserve</a></div>
-        <div class="plan-row"><div class="plan-info"><b>12 Months</b><em class="plan-tag">Best Value</em><span>12 bags · one a month</span></div><div class="plan-price"><b>$816</b><small>$68 a bag · save $144</small></div><a href="#contact" class="shop-btn" data-coffee="Grand Reserva: 12-month subscription">Reserve</a></div>
+        <div class="plan-row"><div class="plan-info"><b>3 Months</b><span>3 bags · one a month</span></div><div class="plan-price"><b>$228</b><small>$76 a bag · save $12</small></div><button type="button" class="shop-btn" data-coffee="Grand Reserva: 3-month subscription">Reserve</button></div>
+        <div class="plan-row"><div class="plan-info"><b>6 Months</b><em class="plan-tag">Most Popular</em><span>6 bags · one a month</span></div><div class="plan-price"><b>$432</b><small>$72 a bag · save $48</small></div><button type="button" class="shop-btn" data-coffee="Grand Reserva: 6-month subscription">Reserve</button></div>
+        <div class="plan-row"><div class="plan-info"><b>12 Months</b><em class="plan-tag">Best Value</em><span>12 bags · one a month</span></div><div class="plan-price"><b>$816</b><small>$68 a bag · save $144</small></div><button type="button" class="shop-btn" data-coffee="Grand Reserva: 12-month subscription">Reserve</button></div>
         <p class="plan-foot">Paid once, up front. Free shipping.</p>
       </div>
       <div class="plan-panel">
         <div class="tier-name">Estate</div>
         <div class="tier-volume">12 oz (340 g) · Whole Bean · One bag a month</div>
         <p class="product-desc">The signature Oro de Diamante cup. Single source, organically grown Catuai from our off-the-grid estate.</p>
-        <div class="plan-row"><div class="plan-info"><b>3 Months</b><span>3 bags · one a month</span></div><div class="plan-price"><b>$171</b><small>$57 a bag · save $9</small></div><a href="#contact" class="shop-btn" data-coffee="Estate: 3-month subscription">Reserve</a></div>
-        <div class="plan-row"><div class="plan-info"><b>6 Months</b><em class="plan-tag">Most Popular</em><span>6 bags · one a month</span></div><div class="plan-price"><b>$324</b><small>$54 a bag · save $36</small></div><a href="#contact" class="shop-btn" data-coffee="Estate: 6-month subscription">Reserve</a></div>
-        <div class="plan-row"><div class="plan-info"><b>12 Months</b><em class="plan-tag">Best Value</em><span>12 bags · one a month</span></div><div class="plan-price"><b>$612</b><small>$51 a bag · save $108</small></div><a href="#contact" class="shop-btn" data-coffee="Estate: 12-month subscription">Reserve</a></div>
+        <div class="plan-row"><div class="plan-info"><b>3 Months</b><span>3 bags · one a month</span></div><div class="plan-price"><b>$171</b><small>$57 a bag · save $9</small></div><button type="button" class="shop-btn" data-coffee="Estate: 3-month subscription">Reserve</button></div>
+        <div class="plan-row"><div class="plan-info"><b>6 Months</b><em class="plan-tag">Most Popular</em><span>6 bags · one a month</span></div><div class="plan-price"><b>$324</b><small>$54 a bag · save $36</small></div><button type="button" class="shop-btn" data-coffee="Estate: 6-month subscription">Reserve</button></div>
+        <div class="plan-row"><div class="plan-info"><b>12 Months</b><em class="plan-tag">Best Value</em><span>12 bags · one a month</span></div><div class="plan-price"><b>$612</b><small>$51 a bag · save $108</small></div><button type="button" class="shop-btn" data-coffee="Estate: 12-month subscription">Reserve</button></div>
         <p class="plan-foot">Paid once, up front. Free shipping.</p>
       </div>
       </div>
@@ -647,7 +672,7 @@
         <p class="product-desc">Our most selective offering from the estate, in the fewest bags. Single source, organically grown Catuai at 1,650 feet.</p>
         <div class="price-main">$80</div><div class="price-sub">per 12 oz bag</div>
         <p class="product-meta">Tasting notes announced at launch</p>
-        <a href="#contact" class="shop-btn" data-coffee="Grand Reserva">Reserve Grand Reserva</a>
+        <button type="button" class="shop-btn" data-coffee="Grand Reserva">Reserve Grand Reserva</button>
       </div>
       <div class="product">
         <div class="bag-mock"><svg viewBox="0 0 260 90" fill="none" stroke="#c9a24b" stroke-width="3" stroke-linejoin="round"><path d="M6 84 L92 30 L110 44 L132 10 L178 52 L254 84"/></svg><div class="bm-name">ORO DE<br>DIAMANTE</div><div class="bm-line">ESTATE COFFEE</div><div class="bm-box">SINGLE ESTATE<b>ESTATE</b></div><div class="bm-wt">NET WT. 12 OZ (340 g)</div></div>
@@ -656,7 +681,7 @@
         <p class="product-desc">The signature Oro de Diamante cup. Single source, organically grown Catuai from our off-the-grid estate.</p>
         <div class="price-main">$60</div><div class="price-sub">per 12 oz bag</div>
         <p class="product-meta">Tasting notes announced at launch</p>
-        <a href="#contact" class="shop-btn" data-coffee="Estate">Reserve Estate</a>
+        <button type="button" class="shop-btn" data-coffee="Estate">Reserve Estate</button>
       </div>
     </div>
     <div class="journey">
@@ -791,6 +816,36 @@
   </div>
 </footer>
 
+<div class="rm-overlay" id="rm-overlay" aria-hidden="true">
+  <div class="rm-panel" role="dialog" aria-modal="true" aria-labelledby="rm-title">
+    <button type="button" class="rm-close" id="rm-close" aria-label="Close">&times;</button>
+    <div id="rm-body">
+      <span class="rm-tag">Your Reservation</span>
+      <h3 class="rm-title" id="rm-title"></h3>
+      <p class="rm-detail" id="rm-detail"></p>
+      <div class="rm-total" id="rm-total"></div>
+      <p class="rm-note" id="rm-note"></p>
+      <form class="rm-form" id="rm-form">
+        <input type="hidden" name="form-name" value="reserve">
+        <input type="hidden" name="coffee" id="rm-coffee">
+        <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+        <label class="rm-qty"><span id="rm-qty-label">Quantity</span><input type="number" id="rm-qty" min="1" max="99" value="1" inputmode="numeric"></label>
+        <input type="text" name="name" placeholder="Your Name" required autocomplete="name">
+        <input type="email" name="email" placeholder="Email Address" required autocomplete="email">
+        <textarea id="rm-note-field" placeholder="Anything else you'd like us to know (optional)"></textarea>
+        <input type="hidden" name="message" id="rm-message">
+        <p class="rm-error" id="rm-error">Sorry, something went wrong. Please try again in a moment.</p>
+        <button type="submit" class="rm-submit" id="rm-submit">Confirm Reservation</button>
+      </form>
+    </div>
+    <div class="rm-done" id="rm-done">
+      <h3>Thank You</h3>
+      <p id="rm-done-text"></p>
+      <button type="button" class="shop-btn" id="rm-done-close">Close</button>
+    </div>
+  </div>
+</div>
+
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -802,12 +857,71 @@
     const hero = document.querySelector('.hero-bg');
     if (hero) hero.style.transform = `scale(1.05) translateY(${window.scrollY * 0.3}px)`;
   });
-  document.querySelectorAll('.shop-btn[data-coffee]').forEach(b => {
-    b.addEventListener('click', () => {
-      const sel = document.getElementById('coffee-select');
-      if (sel) sel.value = b.dataset.coffee;
+  (function () {
+    const ITEMS = {
+      'Grand Reserva': { title: 'Grand Reserva', detail: '12 oz (340 g) whole bean bag', unit: 80, unitLabel: 'Number of bags', per: ' per bag' },
+      'Estate': { title: 'Estate', detail: '12 oz (340 g) whole bean bag', unit: 60, unitLabel: 'Number of bags', per: ' per bag' },
+      'Grand Reserva: 3-month subscription': { title: 'Grand Reserva, 3 Months', detail: '3 bags, one a month · $76 a bag', unit: 228, sub: 1 },
+      'Grand Reserva: 6-month subscription': { title: 'Grand Reserva, 6 Months', detail: '6 bags, one a month · $72 a bag', unit: 432, sub: 1 },
+      'Grand Reserva: 12-month subscription': { title: 'Grand Reserva, 12 Months', detail: '12 bags, one a month · $68 a bag', unit: 816, sub: 1 },
+      'Estate: 3-month subscription': { title: 'Estate, 3 Months', detail: '3 bags, one a month · $57 a bag', unit: 171, sub: 1 },
+      'Estate: 6-month subscription': { title: 'Estate, 6 Months', detail: '6 bags, one a month · $54 a bag', unit: 324, sub: 1 },
+      'Estate: 12-month subscription': { title: 'Estate, 12 Months', detail: '12 bags, one a month · $51 a bag', unit: 612, sub: 1 }
+    };
+    const $ = id => document.getElementById(id);
+    const overlay = $('rm-overlay'), form = $('rm-form'), qty = $('rm-qty');
+    let item = null, key = '', last = null;
+    const money = n => '$' + n.toLocaleString('en-US');
+    function qtyVal() { return Math.max(1, Math.min(99, parseInt(qty.value, 10) || 1)); }
+    function refresh() {
+      const q = qtyVal();
+      $('rm-total').textContent = money(item.unit * q);
+      $('rm-note').textContent = item.sub
+        ? 'Paid once, up front. Free shipping. We will email you two weeks before your card is charged. No payment is taken today.'
+        : 'We will email you when the first harvest is ready, before your card is charged. No payment is taken today.';
+    }
+    function open(k, trigger) {
+      key = k; item = ITEMS[k]; if (!item) return; last = trigger;
+      $('rm-title').textContent = item.title;
+      $('rm-detail').textContent = item.detail;
+      $('rm-qty-label').textContent = item.sub ? 'Number of subscriptions' : item.unitLabel;
+      $('rm-coffee').value = k; qty.value = 1;
+      $('rm-error').style.display = 'none';
+      $('rm-body').style.display = ''; $('rm-done').style.display = 'none';
+      $('rm-submit').disabled = false; $('rm-submit').textContent = 'Confirm Reservation';
+      refresh();
+      overlay.classList.add('open'); overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => form.elements['name'].focus(), 50);
+    }
+    function close() {
+      overlay.classList.remove('open'); overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (last) last.focus();
+    }
+    document.querySelectorAll('.shop-btn[data-coffee]').forEach(b => b.addEventListener('click', () => open(b.dataset.coffee, b)));
+    qty.addEventListener('input', refresh);
+    $('rm-close').addEventListener('click', close);
+    $('rm-done-close').addEventListener('click', close);
+    overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const q = qtyVal(), total = money(item.unit * q);
+      const lines = [(item.sub ? 'Subscriptions: ' : 'Bags: ') + q + ' (' + item.title + ', ' + total + ' total)'];
+      const extra = $('rm-note-field').value.trim();
+      if (extra) lines.push(extra);
+      $('rm-message').value = lines.join('\n');
+      const btn = $('rm-submit'); btn.disabled = true; btn.textContent = 'Sending...';
+      $('rm-error').style.display = 'none';
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+        .then(r => { if (!r.ok) throw new Error('bad'); 
+          $('rm-done-text').textContent = 'Your reservation for ' + q + ' x ' + item.title + ' (' + total + ') is in. We will email ' + form.elements['email'].value + ' ' + (item.sub ? 'two weeks before your card is charged' : 'when the first harvest is ready') + '. No payment was taken today.';
+          $('rm-body').style.display = 'none'; $('rm-done').style.display = 'block'; form.reset();
+        })
+        .catch(() => { btn.disabled = false; btn.textContent = 'Confirm Reservation'; $('rm-error').style.display = 'block'; });
     });
-  });
+  })();
 </script>
 </body>
 </html>
